@@ -10,9 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2023_01_29_042339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "metrics", force: :cascade do |t|
+    t.datetime "timestamp", null: false
+    t.string "name", null: false
+    t.float "value", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_metrics_on_name"
+    t.index ["timestamp"], name: "index_metrics_on_timestamp"
+  end
+
+  create_table "metrics_aggregates", force: :cascade do |t|
+    t.string "metric_name"
+    t.integer "aggregate_type", default: 0, null: false
+    t.integer "timespan", default: 0, null: false
+    t.datetime "timestamp", null: false
+    t.float "value", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["aggregate_type"], name: "index_metrics_aggregates_on_aggregate_type"
+    t.index ["metric_name"], name: "index_metrics_aggregates_on_metric_name"
+    t.index ["timespan"], name: "index_metrics_aggregates_on_timespan"
+    t.index ["timestamp"], name: "index_metrics_aggregates_on_timestamp"
+  end
 
 end

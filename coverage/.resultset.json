@@ -1,0 +1,237 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/abdulla/Projects/metrics-visualization-app/spec/support/factory_bot.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/abdulla/Projects/metrics-visualization-app/app/controllers/api/v1/metrics_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          4,
+          4,
+          4,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          4,
+          null,
+          null,
+          null,
+          null,
+          1,
+          12,
+          null,
+          null,
+          1,
+          8,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/abdulla/Projects/metrics-visualization-app/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/abdulla/Projects/metrics-visualization-app/app/models/metric.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          7,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/abdulla/Projects/metrics-visualization-app/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/abdulla/Projects/metrics-visualization-app/app/models/metrics_aggregate.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          30,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/abdulla/Projects/metrics-visualization-app/app/services/metrics/create_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          4,
+          4,
+          4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/abdulla/Projects/metrics-visualization-app/app/services/application_service.rb": {
+        "lines": [
+          1,
+          1,
+          15,
+          null,
+          null
+        ]
+      },
+      "/Users/abdulla/Projects/metrics-visualization-app/app/services/metrics_aggregates/sync_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          10,
+          10,
+          null,
+          null,
+          1,
+          10,
+          10,
+          30,
+          30,
+          30,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          20,
+          10,
+          10,
+          null,
+          null,
+          null,
+          1,
+          30,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          30,
+          30,
+          15,
+          null,
+          null,
+          30,
+          null,
+          30,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/abdulla/Projects/metrics-visualization-app/app/services/metrics/destroy_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1675068898
+  }
+}
