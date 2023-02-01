@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::MetricsController, type: :request do
-  let!(:time) { Time.parse("2023-01-30 06:45:12 UTC") }
+  let!(:time) { Time.zone.parse("2023-01-30 06:45:12") }
   let!(:metric) { create(:metric, name: "test_1", timestamp: time, value: 18) }
   let(:time_strf) { time.strftime('%Y-%m-%d %H:%M:%S') }
-  let(:current_day) { time.beginning_of_day.strftime('%Y-%m-%d %H:%M:%S') }
-  let(:current_hour) { time.beginning_of_hour.strftime('%Y-%m-%d %H:%M:%S') }
-  let(:current_minute) { time.beginning_of_minute.strftime('%Y-%m-%d %H:%M:%S') }
+  let(:current_day) { time.beginning_of_day.strftime('%Y-%m-%d %H:%M') }
+  let(:current_hour) { time.beginning_of_hour.strftime('%Y-%m-%d %H:%M') }
+  let(:current_minute) { time.beginning_of_minute.strftime('%Y-%m-%d %H:%M') }
 
   describe "GET /api/v1/metrics" do
     before do
@@ -20,12 +20,12 @@ RSpec.describe Api::V1::MetricsController, type: :request do
           id: metric.id, name: metric.name, timestamp: time_strf, value: metric.value
         }],
         metrics_aggregates: [
-          {metric_name: "test_1", aggregate_type: "average", timestamp: current_day, timespan: "day", value: 18.0},
-          {metric_name: "test_1", aggregate_type: "average", timestamp: current_hour, timespan: "hour", value: 18.0},
-          {metric_name: "test_1", aggregate_type: "average", timestamp: current_minute, timespan: "minute", value: 18.0},
           {metric_name: nil, aggregate_type: "average", timestamp: current_day, timespan: "day", value: 18.0},
+          {metric_name: "test_1", aggregate_type: "average", timestamp: current_day, timespan: "day", value: 18.0},
           {metric_name: nil, aggregate_type: "average", timestamp: current_hour, timespan: "hour", value: 18.0},
+          {metric_name: "test_1", aggregate_type: "average", timestamp: current_hour, timespan: "hour", value: 18.0},
           {metric_name: nil, aggregate_type: "average", timestamp: current_minute, timespan: "minute", value: 18.0},
+          {metric_name: "test_1", aggregate_type: "average", timestamp: current_minute, timespan: "minute", value: 18.0},
         ]
       })
     end
@@ -76,12 +76,12 @@ RSpec.describe Api::V1::MetricsController, type: :request do
       expect(JSON.parse(response.body).deep_symbolize_keys).to eq({
         metrics: [],
         metrics_aggregates: [
-          {metric_name: "test_1", aggregate_type: "average", timestamp: current_day, timespan: "day", value: 0.0},
-          {metric_name: "test_1", aggregate_type: "average", timestamp: current_hour, timespan: "hour", value: 0.0},
-          {metric_name: "test_1", aggregate_type: "average", timestamp: current_minute, timespan: "minute", value: 0.0},
           {metric_name: nil, aggregate_type: "average", timestamp: current_day, timespan: "day", value: 0.0},
+          {metric_name: "test_1", aggregate_type: "average", timestamp: current_day, timespan: "day", value: 0.0},
           {metric_name: nil, aggregate_type: "average", timestamp: current_hour, timespan: "hour", value: 0.0},
+          {metric_name: "test_1", aggregate_type: "average", timestamp: current_hour, timespan: "hour", value: 0.0},
           {metric_name: nil, aggregate_type: "average", timestamp: current_minute, timespan: "minute", value: 0.0},
+          {metric_name: "test_1", aggregate_type: "average", timestamp: current_minute, timespan: "minute", value: 0.0},
         ]
       })
     end
@@ -111,11 +111,11 @@ RSpec.describe Api::V1::MetricsController, type: :request do
   end
 
   def seed_metrics_aggregates
-    create(:metrics_aggregate, metric_name: metric.name, timestamp: current_day, value: 18, timespan: "day")
-    create(:metrics_aggregate, metric_name: metric.name, timestamp: current_hour, value: 18, timespan: "hour")
-    create(:metrics_aggregate, metric_name: metric.name, timestamp: current_minute, value: 18, timespan: "minute")
-    create(:metrics_aggregate, timestamp: current_day, value: 18, timespan: "day")
-    create(:metrics_aggregate, timestamp: current_hour, value: 18, timespan: "hour")
-    create(:metrics_aggregate, timestamp: current_minute, value: 18, timespan: "minute")    
+    create(:metrics_aggregate, metric_name: metric.name, timestamp: DateTime.parse(current_day), value: 18, timespan: "day")
+    create(:metrics_aggregate, metric_name: metric.name, timestamp: DateTime.parse(current_hour), value: 18, timespan: "hour")
+    create(:metrics_aggregate, metric_name: metric.name, timestamp: DateTime.parse(current_minute), value: 18, timespan: "minute")
+    create(:metrics_aggregate, timestamp: DateTime.parse(current_day), value: 18, timespan: "day")
+    create(:metrics_aggregate, timestamp: DateTime.parse(current_hour), value: 18, timespan: "hour")
+    create(:metrics_aggregate, timestamp: DateTime.parse(current_minute), value: 18, timespan: "minute")    
   end
 end

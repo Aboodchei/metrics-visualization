@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-01-30T10:54:58+02:00">2023-01-30T10:54:58+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-02-01T12:42:39+02:00">2023-02-01T12:42:39+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         6.37
+         6.3
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>78</b> relevant lines,
-    <span class="green"><b>78</b> lines covered</span> and
+    <b>79</b> relevant lines,
+    <span class="green"><b>79</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -73,11 +73,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b68cfa13f46f8e6ba89d43459be07dfd573c9fcb" class="src_link" title="app/controllers/api/v1/metrics_controller.rb">app/controllers/api/v1/metrics_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">44</td>
-            <td class="cell--number">24</td>
-            <td class="cell--number">24</td>
+            <td class="cell--number">45</td>
+            <td class="cell--number">25</td>
+            <td class="cell--number">25</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.63</td>
+            <td class="cell--number">2.56</td>
             
           </tr>
         
@@ -211,8 +211,8 @@
     
 
     <div class="t-line-summary">
-      <b>24</b> relevant lines.
-      <span class="green"><b>24</b> lines covered</span> and
+      <b>25</b> relevant lines.
+      <span class="green"><b>25</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -252,12 +252,23 @@
 
             
 
+            <code class="ruby">    skip_before_action :verify_authenticity_token</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">    def index</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="4">
+          <li class="covered" data-hits="4" data-linenumber="5">
             <span class="hits">4</span>
             
 
@@ -268,7 +279,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
+          <li class="never" data-hits="" data-linenumber="6">
             
             
 
@@ -279,7 +290,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
+          <li class="never" data-hits="" data-linenumber="7">
             
             
 
@@ -290,7 +301,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
+          <li class="covered" data-hits="1" data-linenumber="8">
             <span class="hits">1</span>
             
 
@@ -301,7 +312,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="8">
+          <li class="covered" data-hits="4" data-linenumber="9">
             <span class="hits">4</span>
             
 
@@ -312,7 +323,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="9">
+          <li class="covered" data-hits="4" data-linenumber="10">
             <span class="hits">4</span>
             
 
@@ -323,7 +334,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="10">
+          <li class="covered" data-hits="4" data-linenumber="11">
             <span class="hits">4</span>
             
 
@@ -334,24 +345,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="11">
+          <li class="covered" data-hits="4" data-linenumber="12">
             <span class="hits">4</span>
             
 
             
 
             <code class="ruby">      render json: {id: metric.id}</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -362,18 +362,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="14">
+            
             
 
             
 
-            <code class="ruby">    def destroy</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -384,7 +384,7 @@
 
             
 
-            <code class="ruby">      metric = Metric.find(params[:id])</code>
+            <code class="ruby">    def destroy</code>
           </li>
         </div>
       
@@ -395,7 +395,7 @@
 
             
 
-            <code class="ruby">      Metrics::DestroyService.call!(metric)</code>
+            <code class="ruby">      metric = Metric.find(params[:id])</code>
           </li>
         </div>
       
@@ -406,7 +406,7 @@
 
             
 
-            <code class="ruby">      MetricsAggregates::SyncService.call!(metric.timestamp, metric.name)</code>
+            <code class="ruby">      Metrics::DestroyService.call!(metric)</code>
           </li>
         </div>
       
@@ -417,7 +417,7 @@
 
             
 
-            <code class="ruby">      MetricsAggregates::SyncService.call!(metric.timestamp)</code>
+            <code class="ruby">      MetricsAggregates::SyncService.call!(metric.timestamp.utc, metric.name)</code>
           </li>
         </div>
       
@@ -428,18 +428,18 @@
 
             
 
-            <code class="ruby">      render json: {id: metric.id}</code>
+            <code class="ruby">      MetricsAggregates::SyncService.call!(metric.timestamp.utc)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">      render json: {id: metric.id}</code>
           </li>
         </div>
       
@@ -450,12 +450,23 @@
 
             
 
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
+          <li class="covered" data-hits="1" data-linenumber="23">
             <span class="hits">1</span>
             
 
@@ -466,7 +477,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="never" data-hits="" data-linenumber="24">
             
             
 
@@ -477,7 +488,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="24">
+          <li class="covered" data-hits="1" data-linenumber="25">
             <span class="hits">1</span>
             
 
@@ -488,7 +499,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="26">
             
             
 
@@ -499,24 +510,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="26">
+          <li class="covered" data-hits="4" data-linenumber="27">
             <span class="hits">4</span>
             
 
             
 
-            <code class="ruby">        metrics: Metric.select(:id, :name, :value, :timestamp),</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="27">
-            
-            
-
-            
-
-            <code class="ruby">        metrics_aggregates: MetricsAggregate.select(:metric_name, :value, :timestamp, :timespan, :aggregate_type)</code>
+            <code class="ruby">        metrics: Metric.order(&quot;timestamp ASC&quot;).select(:id, :name, :value, :timestamp),</code>
           </li>
         </div>
       
@@ -527,7 +527,7 @@
 
             
 
-            <code class="ruby">      }</code>
+            <code class="ruby">        metrics_aggregates: MetricsAggregate.order(&quot;timestamp ASC, timespan ASC, metric_name NULLS FIRST&quot;).select(:metric_name, :value, :timestamp, :timespan, :aggregate_type)</code>
           </li>
         </div>
       
@@ -538,7 +538,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      }</code>
           </li>
         </div>
       
@@ -549,12 +549,23 @@
 
             
 
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="31">
+          <li class="covered" data-hits="1" data-linenumber="32">
             <span class="hits">1</span>
             
 
@@ -565,24 +576,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="12" data-linenumber="32">
+          <li class="covered" data-hits="12" data-linenumber="33">
             <span class="hits">12</span>
             
 
             
 
-            <code class="ruby">      params[:timestamp].to_time</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="33">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
+            <code class="ruby">      DateTime.parse(params[:timestamp])</code>
           </li>
         </div>
       
@@ -593,12 +593,23 @@
 
             
 
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="35">
+          <li class="covered" data-hits="1" data-linenumber="36">
             <span class="hits">1</span>
             
 
@@ -609,7 +620,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="36">
+          <li class="covered" data-hits="8" data-linenumber="37">
             <span class="hits">8</span>
             
 
@@ -620,7 +631,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="37">
+          <li class="never" data-hits="" data-linenumber="38">
             
             
 
@@ -631,7 +642,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
+          <li class="never" data-hits="" data-linenumber="39">
             
             
 
@@ -642,7 +653,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="39">
+          <li class="covered" data-hits="1" data-linenumber="40">
             <span class="hits">1</span>
             
 
@@ -653,7 +664,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="40">
+          <li class="covered" data-hits="4" data-linenumber="41">
             <span class="hits">4</span>
             
 
@@ -664,7 +675,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="41">
+          <li class="never" data-hits="" data-linenumber="42">
             
             
 
@@ -675,7 +686,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="42">
+          <li class="never" data-hits="" data-linenumber="43">
             
             
 
@@ -686,7 +697,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="43">
+          <li class="never" data-hits="" data-linenumber="44">
             
             
 
@@ -697,7 +708,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="44">
+          <li class="never" data-hits="" data-linenumber="45">
             
             
 
@@ -1104,7 +1115,7 @@
 
             
 
-            <code class="ruby">      timestamp: timestamp.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;),</code>
+            <code class="ruby">      timestamp: Time.zone.at(timestamp).strftime(&#39;%Y-%m-%d %H:%M:%S&#39;),</code>
           </li>
         </div>
       
@@ -1509,7 +1520,7 @@
 
             
 
-            <code class="ruby">      timestamp: timestamp.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;),</code>
+            <code class="ruby">      timestamp: Time.zone.at(timestamp).strftime(&#39;%Y-%m-%d %H:%M&#39;),</code>
           </li>
         </div>
       

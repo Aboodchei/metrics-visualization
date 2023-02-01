@@ -1,5 +1,6 @@
 module Api::V1
   class MetricsController < ApplicationController
+    skip_before_action :verify_authenticity_token
     def index
       render json: formatted_metrics_and_aggregates
     end
@@ -14,8 +15,8 @@ module Api::V1
     def destroy
       metric = Metric.find(params[:id])
       Metrics::DestroyService.call!(metric)
-      MetricsAggregates::SyncService.call!(metric.timestamp, metric.name)
-      MetricsAggregates::SyncService.call!(metric.timestamp)
+      MetricsAggregates::SyncService.call!(metric.timestamp.utc, metric.name)
+      MetricsAggregates::SyncService.call!(metric.timestamp.utc)
       render json: {id: metric.id}
     end
 
@@ -23,13 +24,13 @@ module Api::V1
 
     def formatted_metrics_and_aggregates
       {
-        metrics: Metric.select(:id, :name, :value, :timestamp),
-        metrics_aggregates: MetricsAggregate.select(:metric_name, :value, :timestamp, :timespan, :aggregate_type)
+        metrics: Metric.order("timestamp ASC").select(:id, :name, :value, :timestamp),
+        metrics_aggregates: MetricsAggregate.order("timestamp ASC, timespan ASC, metric_name NULLS FIRST").select(:metric_name, :value, :timestamp, :timespan, :aggregate_type)
       }
     end
 
     def timestamp
-      params[:timestamp].to_time
+      DateTime.parse(params[:timestamp])
     end
 
     def metric_name

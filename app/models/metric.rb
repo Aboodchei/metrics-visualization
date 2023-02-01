@@ -20,7 +20,7 @@ class Metric < ApplicationRecord
       id: id,
       name: name,
       value: value,
-      timestamp: timestamp.strftime('%Y-%m-%d %H:%M:%S'),
+      timestamp: Time.zone.at(timestamp).strftime('%Y-%m-%d %H:%M:%S'),
     }
   end
 end

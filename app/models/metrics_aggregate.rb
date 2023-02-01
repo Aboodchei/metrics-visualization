@@ -28,7 +28,7 @@ class MetricsAggregate < ApplicationRecord
       metric_name: metric_name,
       value: value,
       timespan: timespan,
-      timestamp: timestamp.strftime('%Y-%m-%d %H:%M:%S'),
+      timestamp: Time.zone.at(timestamp).strftime('%Y-%m-%d %H:%M'),
     }
   end
 end
